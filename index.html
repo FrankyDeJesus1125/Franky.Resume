@@ -5,257 +5,614 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Franky De Jesus | IT Systems Administrator</title>
   <meta name="description" content="Franky De Jesus - IT Systems Administrator with experience in Microsoft 365, Azure, endpoint management, security operations, and cloud support." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #f5f5f7;
+      --surface: rgba(255,255,255,0.72);
+      --surface-strong: rgba(255,255,255,0.92);
+      --text: #1d1d1f;
+      --muted: #6e6e73;
+      --line: rgba(0,0,0,0.08);
+      --accent: #0071e3;
+      --accent-soft: rgba(0,113,227,0.08);
+      --shadow: 0 20px 60px rgba(0,0,0,0.08);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f6f8;
-      color: #1f2933;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(0,113,227,0.06), transparent 30%),
+        linear-gradient(to bottom, #fbfbfd 0%, var(--bg) 100%);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
     }
 
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 48px 20px;
-      text-align: center;
-    }
+    a { color: inherit; text-decoration: none; }
 
-    header h1 {
-      margin: 0 0 10px;
-      font-size: 2.2rem;
-    }
-
-    header p {
-      margin: 6px 0;
-      font-size: 1rem;
-    }
-
-    nav {
-      background: #1e293b;
-      padding: 12px 20px;
-      text-align: center;
+    .nav {
       position: sticky;
       top: 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(255,255,255,0.72);
+      border-bottom: 1px solid var(--line);
     }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 14px;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1000px;
+    .nav-inner {
+      max-width: var(--max);
       margin: 0 auto;
-      padding: 32px 20px 60px;
+      padding: 14px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
     }
 
-    section {
-      margin-bottom: 48px;
+    .brand {
+      font-weight: 700;
+      letter-spacing: -0.02em;
     }
 
-    h2 {
-      color: #0f172a;
-      border-bottom: 2px solid #cbd5e1;
-      padding-bottom: 8px;
-      margin-bottom: 20px;
-    }
-
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 22px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .job-title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #0f172a;
-    }
-
-    .job-meta {
-      color: #475569;
-      margin-bottom: 12px;
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
       font-size: 0.95rem;
     }
 
-    ul {
-      padding-left: 20px;
+    .nav-links a:hover { color: var(--text); }
+
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 22px 80px;
     }
 
-    li {
-      margin-bottom: 8px;
+    .hero {
+      min-height: 88vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 60px 0 30px;
     }
 
-    .skills {
+    .eyebrow {
+      display: inline-block;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-bottom: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+    }
+
+    h1 {
+      font-size: clamp(3rem, 7vw, 6.8rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      margin: 0;
+      max-width: 960px;
+    }
+
+    .hero-sub {
+      max-width: 780px;
+      margin: 24px auto 0;
+      font-size: clamp(1.05rem, 1.5vw, 1.35rem);
+      color: var(--muted);
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 600;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 16px 34px rgba(0,113,227,0.24);
+    }
+
+    .btn-secondary {
+      background: var(--surface-strong);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .hero-grid {
+      margin-top: 52px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      width: 100%;
+    }
+
+    .glass-card {
+      background: var(--surface);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.55);
+      border-radius: var(--radius-xl);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .glass-card h3 {
+      margin: 0 0 8px;
+      font-size: 1rem;
+    }
+
+    .glass-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.97rem;
+    }
+
+    section {
+      padding: 48px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 4rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
+      margin: 0 0 10px;
+    }
+
+    .section-copy {
+      color: var(--muted);
+      font-size: 1.04rem;
+      max-width: 720px;
+    }
+
+    .focus-grid,
+    .projects-grid,
+    .skills-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .focus-grid { grid-template-columns: repeat(2, 1fr); }
+    .projects-grid { grid-template-columns: 1.2fr .8fr; align-items: start; }
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .panel {
+      background: rgba(255,255,255,0.82);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.05);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+    }
+
+    .panel p, .panel li {
+      color: var(--muted);
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      background: rgba(255,255,255,0.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 30px;
+      box-shadow: 0 14px 38px rgba(0,0,0,0.05);
+    }
+
+    .role-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .role-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+
+    .role-meta {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    ul.clean {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    ul.clean li {
+      margin-bottom: 10px;
+    }
+
+    .project-feature {
+      min-height: 100%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.94), rgba(245,247,250,0.92));
+    }
+
+    .metric {
+      font-size: clamp(2.4rem, 4vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.06em;
+      margin: 18px 0 6px;
+    }
+
+    .metric-caption {
+      color: var(--muted);
+      max-width: 320px;
+    }
+
+    .tag-wrap {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
-    .skill {
-      background: #dbeafe;
-      color: #1e3a8a;
-      padding: 8px 12px;
+    .tag {
+      padding: 10px 14px;
       border-radius: 999px;
-      font-size: 0.9rem;
+      background: var(--accent-soft);
+      color: #0054aa;
+      font-size: 0.92rem;
+      font-weight: 600;
     }
 
-    footer {
+    .contact {
       text-align: center;
-      padding: 25px;
-      background: #0f172a;
-      color: white;
+      padding-bottom: 30px;
     }
 
-    a {
-      color: #2563eb;
+    .contact-card {
+      max-width: 780px;
+      margin: 0 auto;
+      background: linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.82));
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      padding: 38px 28px;
+      box-shadow: 0 24px 54px rgba(0,0,0,0.06);
     }
 
-    @media (max-width: 700px) {
-      header h1 {
-        font-size: 1.8rem;
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+      padding: 20px 0 60px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .8s ease, transform .8s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .focus-grid,
+      .projects-grid,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-inner {
+        justify-content: center;
       }
 
-      nav a {
-        display: inline-block;
-        margin: 6px 8px;
+      .brand {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding-top: 48px;
+      }
+
+      .glass-card,
+      .panel,
+      .experience-card,
+      .contact-card {
+        padding: 22px;
+        border-radius: 22px;
+      }
+
+      h1 {
+        letter-spacing: -0.05em;
       }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Franky De Jesus</h1>
-    <p>IT Systems Administrator | Microsoft 365 | Azure | Security Operations</p>
-    <p>Email: FDeJesus1125@outlook.com</p>
-    <p>
-      <a href="https://www.linkedin.com/" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/" target="_blank">GitHub</a>
-    </p>
-  </header>
-
-  <nav>
-    <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#skills">Skills</a>
-    <a href="#education">Education</a>
+  <nav class="nav">
+    <div class="nav-inner">
+      <div class="brand">Franky De Jesus</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
   </nav>
 
-  <div class="container">
-    <section id="about">
-      <h2>About</h2>
-      <div class="card">
-        <p>
-          IT systems and Microsoft 365 administrator with 5+ years of experience supporting cloud and hybrid environments across Microsoft 365, Azure, endpoint management, identity, security, and backup operations. Hands-on experience administering multi-tenant client infrastructures, automating tasks with PowerShell, deploying endpoints at scale with Intune and Autopilot, and supporting secure day-to-day operations across financial, healthcare, and education organizations.
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="eyebrow reveal">Microsoft 365 • Azure • Endpoint Management • Security</div>
+        <h1 class="reveal">Building clean, reliable IT environments that scale.</h1>
+        <p class="hero-sub reveal">
+          Franky De Jesus is an IT systems administrator with experience across Microsoft 365, Azure, endpoint deployment, identity, security operations, and cloud support. This site highlights the work, projects, and technical foundation behind that experience.
         </p>
-      </div>
-    </section>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="#projects">View Projects</a>
+          <a class="btn btn-secondary" href="resume-master.md" target="_blank" rel="noopener noreferrer">Open Resume</a>
+        </div>
 
-    <section id="experience">
-      <h2>Experience</h2>
-
-      <div class="card">
-        <div class="job-title">IT Senior Technician</div>
-        <div class="job-meta">Seaglass Technologies LLC | Greenwich, CT | 10/2023 – Present</div>
-        <ul>
-          <li>Administer Microsoft 365 and Azure environments across 15+ client organizations, supporting tenant configuration, licensing, identity, security policies, and day-to-day cloud operations.</li>
-          <li>Deploy and manage 275+ Windows endpoints using Intune and Windows Autopilot, improving provisioning efficiency and reducing deployment time by about 60%.</li>
-          <li>Automate recurring administrative tasks with PowerShell, including device enrollment, compliance assignments, reporting, and endpoint management workflows, reducing manual effort by more than 30%.</li>
-          <li>Support Entra ID / Azure AD, Microsoft AD, MFA, Conditional Access, and hybrid identity troubleshooting across client environments.</li>
-          <li>Maintain Microsoft 365 backup, patching, endpoint protection, and compliance processes to support security and business continuity requirements across multiple tenants.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="job-title">IT Security Associate</div>
-        <div class="job-meta">Kingstone Insurance Companies | Kingston, NY | 02/2021 – 12/2023</div>
-        <ul>
-          <li>Managed hybrid AWS and on-premises environments with a focus on risk reduction and cloud backup operations.</li>
-          <li>Produced audit documentation and information for SOX, HIPAA, and NIST compliance and acted as primary liaison to external auditors.</li>
-          <li>Created phishing simulations using KnowBe4, trained over 200 staff, and significantly reduced security breach risk.</li>
-          <li>Oversaw AWS access management, role-based access control, and secure provisioning for approximately 150 users.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="job-title">Operations Administrator</div>
-        <div class="job-meta">KIPP NYC | Bronx, NY | 01/2017 – 12/2019</div>
-        <ul>
-          <li>Provided desktop support, device provisioning, and vendor coordination for more than 200 faculty and staff.</li>
-          <li>Audited and maintained IT hardware, software licenses, and inventory systems to support academic operations.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="projects">
-      <h2>Projects</h2>
-
-      <div class="card">
-        <h3>Intune and Autopilot Endpoint Deployment</h3>
-        <p>Built and supported a large-scale endpoint deployment process using Microsoft Intune and Windows Autopilot across multiple client environments. This work helped standardize provisioning, reduce manual setup time, and improve remote onboarding for end users.</p>
-      </div>
-
-      <div class="card">
-        <h3>Microsoft 365 Tenant Administration</h3>
-        <p>Supported Microsoft 365 environments across multiple client organizations, including licensing, identity, security settings, backup support, Exchange administration, and general tenant operations.</p>
-      </div>
-
-      <div class="card">
-        <h3>PowerShell Automation</h3>
-        <p>Automated recurring administrative tasks using PowerShell, including device enrollment, compliance-related work, reporting, and other support workflows.</p>
-      </div>
-
-      <div class="card">
-        <h3>AWS and Security Operations</h3>
-        <p>Worked in hybrid AWS and on-premises environments with a focus on IAM, backup operations, access control, phishing simulations, audit support, and security administration.</p>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="card">
-        <div class="skills">
-          <span class="skill">Microsoft 365 Administration</span>
-          <span class="skill">Exchange Online</span>
-          <span class="skill">Entra ID / Azure AD</span>
-          <span class="skill">Intune</span>
-          <span class="skill">Windows Autopilot</span>
-          <span class="skill">PowerShell</span>
-          <span class="skill">Azure</span>
-          <span class="skill">AWS</span>
-          <span class="skill">Microsoft AD</span>
-          <span class="skill">IAM</span>
-          <span class="skill">RBAC</span>
-          <span class="skill">Backup and Recovery</span>
-          <span class="skill">Endpoint Management</span>
-          <span class="skill">Cloud Security</span>
-          <span class="skill">Compliance Support</span>
+        <div class="hero-grid reveal">
+          <div class="glass-card">
+            <h3>15+ client environments</h3>
+            <p>Supporting Microsoft 365, Azure, identity, and operational needs across multiple organizations.</p>
+          </div>
+          <div class="glass-card">
+            <h3>275+ endpoints deployed</h3>
+            <p>Scaled device provisioning with Intune and Autopilot to improve remote onboarding and consistency.</p>
+          </div>
+          <div class="glass-card">
+            <h3>Security + operations mindset</h3>
+            <p>Hands-on work across backup, access control, compliance support, patching, and user administration.</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="education">
-      <h2>Education & Certifications</h2>
-      <div class="card">
-        <p><strong>Fordham University</strong> | B.S. Information Science, Minor in Economics | Graduated 05/2019</p>
-        <p><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> | Issued 12/2024</p>
-        <p><strong>AWS Cloud Practitioner</strong> | Issued 05/2021</p>
+    <section id="about">
+      <div class="section-head reveal">
+        <div class="section-label">About</div>
+        <h2>A broad technical background built around real day-to-day ownership.</h2>
+        <p class="section-copy">
+          The focus has been on supporting environments that need to stay usable, secure, and easy to manage. That includes Microsoft 365 administration, Azure support, endpoint deployment, PowerShell automation, access management, backup processes, and technical troubleshooting across regulated client environments.
+        </p>
+      </div>
+
+      <div class="focus-grid">
+        <div class="panel reveal">
+          <h3>What I work on</h3>
+          <p>Multi-tenant Microsoft 365 administration, endpoint management, Azure support, backup operations, identity and access management, and security-focused operational support.</p>
+        </div>
+        <div class="panel reveal">
+          <h3>How I approach it</h3>
+          <p>Keep systems simple where possible, automate repeatable work, reduce manual effort, improve reliability, and make sure users and environments stay supported without unnecessary complexity.</p>
+        </div>
       </div>
     </section>
-  </div>
 
-  <footer>
-    <p>Franky De Jesus | IT Systems Administrator Portfolio</p>
-  </footer>
+    <section id="experience">
+      <div class="section-head reveal">
+        <div class="section-label">Experience</div>
+        <h2>Work shaped by infrastructure, users, and operations.</h2>
+        <p class="section-copy">
+          The experience below is broad by design. It spans cloud administration, endpoint rollout, security support, user operations, and the kind of all-around technical ownership that translates well across higher-paying IT roles.
+        </p>
+      </div>
+
+      <div class="experience-list">
+        <article class="experience-card reveal">
+          <div class="role-top">
+            <div>
+              <div class="role-title">IT Senior Technician</div>
+              <div class="role-meta">Seaglass Technologies LLC • Greenwich, CT</div>
+            </div>
+            <div class="role-meta">10/2023 – Present</div>
+          </div>
+          <ul class="clean">
+            <li>Administer Microsoft 365 and Azure environments across 15+ client organizations, supporting tenant configuration, licensing, identity, security policies, and day-to-day cloud operations.</li>
+            <li>Deploy and manage 275+ Windows endpoints using Intune and Windows Autopilot, improving provisioning efficiency and reducing deployment time by about 60%.</li>
+            <li>Automate recurring administrative tasks with PowerShell, including device enrollment, compliance assignments, reporting, and endpoint management workflows, reducing manual effort by more than 30%.</li>
+            <li>Support Entra ID / Azure AD, Microsoft AD, MFA, Conditional Access, and hybrid identity troubleshooting across client environments.</li>
+            <li>Maintain Microsoft 365 backup, patching, endpoint protection, and compliance processes to support security and business continuity requirements across multiple tenants.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="role-top">
+            <div>
+              <div class="role-title">IT Security Associate</div>
+              <div class="role-meta">Kingstone Insurance Companies • Kingston, NY</div>
+            </div>
+            <div class="role-meta">02/2021 – 12/2023</div>
+          </div>
+          <ul class="clean">
+            <li>Managed hybrid AWS and on-premises environments with a focus on risk reduction, backup operations, and secure access management.</li>
+            <li>Produced audit documentation for SOX, HIPAA, and NIST compliance and acted as a primary point of contact during external audit work.</li>
+            <li>Built phishing simulations with KnowBe4, trained more than 200 staff, and supported security awareness efforts across the organization.</li>
+            <li>Oversaw IAM and role-based access control for an AWS environment serving approximately 150 users.</li>
+          </ul>
+        </article>
+
+        <article class="experience-card reveal">
+          <div class="role-top">
+            <div>
+              <div class="role-title">Operations Administrator</div>
+              <div class="role-meta">KIPP NYC • Bronx, NY</div>
+            </div>
+            <div class="role-meta">01/2017 – 12/2019</div>
+          </div>
+          <ul class="clean">
+            <li>Provided desktop support, device provisioning, and vendor coordination for more than 200 faculty and staff.</li>
+            <li>Maintained hardware, software, documentation, and inventory processes that supported day-to-day academic operations.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-head reveal">
+        <div class="section-label">Projects</div>
+        <h2>Practical work with measurable outcomes.</h2>
+        <p class="section-copy">
+          These project areas reflect the kind of work that best represents the overall skill set: Microsoft 365 administration, endpoint management, automation, security operations, and cloud support.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <div class="panel project-feature reveal">
+          <div class="section-label" style="margin-bottom: 6px;">Featured</div>
+          <h3>Intune and Autopilot Endpoint Deployment</h3>
+          <p>Built and supported a large-scale endpoint deployment process using Microsoft Intune and Windows Autopilot across multiple client environments. The goal was to standardize provisioning, improve remote onboarding, and reduce the amount of manual setup needed for each device.</p>
+          <div class="metric">275+</div>
+          <div class="metric-caption">Windows endpoints deployed and managed across client environments.</div>
+        </div>
+
+        <div style="display:grid; gap:18px;">
+          <div class="panel reveal">
+            <h3>Microsoft 365 Tenant Administration</h3>
+            <p>Supported licensing, identity, Exchange, security settings, backup support, and day-to-day tenant operations across multiple organizations.</p>
+          </div>
+          <div class="panel reveal">
+            <h3>PowerShell Automation</h3>
+            <p>Automated recurring administrative work for reporting, compliance-related tasks, and endpoint workflows to reduce repetitive manual effort.</p>
+          </div>
+          <div class="panel reveal">
+            <h3>AWS and Security Operations</h3>
+            <p>Worked across IAM, backup operations, phishing simulations, access control, and compliance support in hybrid cloud environments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal">
+        <div class="section-label">Skills</div>
+        <h2>Tools and platforms used across daily operations.</h2>
+        <p class="section-copy">
+          The mix below reflects broad administrator-level work rather than one narrow specialty, which makes it easier to position this experience across systems, cloud, Microsoft 365, and security-focused roles.
+        </p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="panel reveal">
+          <h3>Microsoft stack</h3>
+          <div class="tag-wrap">
+            <span class="tag">Microsoft 365</span>
+            <span class="tag">Exchange Online</span>
+            <span class="tag">Entra ID / Azure AD</span>
+            <span class="tag">Intune</span>
+            <span class="tag">Windows Autopilot</span>
+            <span class="tag">Microsoft AD</span>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Cloud and operations</h3>
+          <div class="tag-wrap">
+            <span class="tag">Azure</span>
+            <span class="tag">AWS</span>
+            <span class="tag">PowerShell</span>
+            <span class="tag">IAM</span>
+            <span class="tag">RBAC</span>
+            <span class="tag">Backup & Recovery</span>
+          </div>
+        </div>
+
+        <div class="panel reveal">
+          <h3>Security and support</h3>
+          <div class="tag-wrap">
+            <span class="tag">Endpoint Management</span>
+            <span class="tag">Compliance Support</span>
+            <span class="tag">Audit Documentation</span>
+            <span class="tag">Cloud Security</span>
+            <span class="tag">Phishing Simulations</span>
+            <span class="tag">Troubleshooting</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-card reveal">
+        <div class="section-label">Contact</div>
+        <h2>Let’s connect.</h2>
+        <p class="section-copy" style="margin: 0 auto 24px;">
+          For roles across Microsoft 365 administration, systems administration, cloud support, and security operations, the best way to reach out is by email or LinkedIn.
+        </p>
+        <div class="hero-actions" style="margin-top: 0;">
+          <a class="btn btn-primary" href="mailto:FDeJesus1125@outlook.com">Email Me</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="btn btn-secondary" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Designed as a clean, modern portfolio for a broad IT resume and project showcase.</div>
+  </main>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
