@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Franky De Jesus Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #4b5563;
+      --accent: #0f172a;
+      --line: #d1d5db;
+      --bg: #f8fafc;
+      --paper: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.45;
+      padding: 28px;
+    }
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid #e5e7eb;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      padding: 42px 46px;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+    .action-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border: 1px solid #cbd5e1;
+      color: var(--accent);
+      background: white;
+      cursor: pointer;
+    }
+    .btn.primary {
+      background: #0f172a;
+      color: white;
+      border-color: #0f172a;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.2rem;
+      letter-spacing: -0.05em;
+      color: var(--accent);
+    }
+    .headline {
+      margin-top: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+    .contact {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+    .section {
+      margin-top: 28px;
+    }
+    .section-title {
+      font-size: 0.86rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 8px;
+      margin-bottom: 14px;
+    }
+    p { margin: 0; }
+    .summary {
+      color: var(--text);
+    }
+    .role {
+      margin-bottom: 18px;
+    }
+    .role-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .role-title {
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .role-company {
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .role-date {
+      color: var(--muted);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    ul {
+      margin: 8px 0 0 18px;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 7px;
+      color: var(--text);
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .small p, .small li { font-size: 0.95rem; }
+    @media (max-width: 700px) {
+      body { padding: 12px; }
+      .page { padding: 24px 22px; }
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media print {
+      body { background: white; padding: 0; }
+      .page {
+        max-width: 100%;
+        border: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+      .topbar { display: none; }
+      a { color: inherit; text-decoration: none; }
+      @page { margin: 0.5in; size: auto; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="topbar">
+      <div></div>
+      <div class="action-row">
+        <button class="btn primary" onclick="window.print()">Save as PDF</button>
+        <a class="btn" href="admin.html">Resume Access</a>
+      </div>
+    </div>
+
+    <header>
+      <h1>Franky De Jesus</h1>
+      <div class="headline">IT Systems Administrator | Microsoft 365 | Azure | Security Operations</div>
+      <div class="contact">FDeJesus1125@outlook.com | LinkedIn: add-your-link-here</div>
+    </header>
+
+    <section class="section">
+      <div class="section-title">Professional Summary</div>
+      <p class="summary">IT systems and Microsoft 365 administrator with 5+ years of experience supporting cloud and hybrid environments across Microsoft 365, Azure, endpoint management, identity, security, and backup operations. Hands-on experience administering multi-tenant client infrastructures, automating tasks with PowerShell, deploying endpoints at scale with Intune and Autopilot, and supporting secure day-to-day operations across financial, healthcare, and education organizations. Seeking remote or hybrid roles in systems, cloud, or Microsoft 365 administration where broad technical ownership, problem-solving, and security awareness are valued.</p>
+    </section>
+
+    <section class="section">
+      <div class="section-title">Experience</div>
+
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="role-title">IT Senior Technician</div>
+            <div class="role-company">Seaglass Technologies LLC | Greenwich, CT</div>
+          </div>
+          <div class="role-date">10/2023 – Present</div>
+        </div>
+        <ul>
+          <li>Administer Microsoft 365 and Azure environments across 15+ client organizations, supporting tenant configuration, licensing, identity, security policies, and day-to-day cloud operations.</li>
+          <li>Deploy and manage 275+ Windows endpoints using Intune and Windows Autopilot, improving provisioning efficiency and reducing deployment time by about 60%.</li>
+          <li>Automate recurring administrative tasks with PowerShell, including device enrollment, compliance assignments, reporting, and endpoint management workflows, reducing manual effort by more than 30%.</li>
+          <li>Support Entra ID / Azure AD, Microsoft AD, MFA, Conditional Access, and hybrid identity troubleshooting across client environments.</li>
+          <li>Maintain Microsoft 365 backup, patching, endpoint protection, and compliance processes to support security and business continuity requirements across multiple tenants.</li>
+          <li>Provide technical support for Microsoft 365, Azure, and production application deployments in financial, healthcare, and other regulated client environments.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="role-title">IT Security Associate</div>
+            <div class="role-company">Kingstone Insurance Companies | Kingston, NY</div>
+          </div>
+          <div class="role-date">02/2021 – 12/2023</div>
+        </div>
+        <ul>
+          <li>Managed hybrid AWS and on-premises environments with a focus on risk reduction, implementing cloud backup solutions that contributed to a measurable decrease in infrastructure risk.</li>
+          <li>Produced audit documentation and information for SOX, HIPAA, and NIST compliance and acted as primary liaison to external auditors.</li>
+          <li>Created phishing simulations using KnowBe4, trained over 200 staff, and significantly reduced security breach risk.</li>
+          <li>Helped design and maintain data privacy and protection policies, procedures, and controls aligned with industry standards and regulations.</li>
+          <li>Oversaw daily operations of an AWS environment for approximately 150 users, focusing on IAM policy management, role-based access control, and secure provisioning.</li>
+        </ul>
+      </div>
+
+      <div class="role">
+        <div class="role-head">
+          <div>
+            <div class="role-title">Operations Administrator</div>
+            <div class="role-company">KIPP NYC | Bronx, NY</div>
+          </div>
+          <div class="role-date">01/2017 – 12/2019</div>
+        </div>
+        <ul>
+          <li>Provided desktop support, device provisioning, and vendor coordination for more than 200 faculty and staff.</li>
+          <li>Audited and maintained IT hardware, software licenses, and inventory systems to support academic operations.</li>
+          <li>Maintained IT inventory, documentation, and vendor coordination for devices and software assets.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section grid-2 small">
+      <div>
+        <div class="section-title">Education & Certifications</div>
+        <p><strong>Fordham University</strong> | B.S. Information Science, Minor in Economics | Graduated 05/2019</p>
+        <p style="margin-top:10px;"><strong>Microsoft Certified: Azure Fundamentals (AZ-900)</strong> | Issued 12/2024</p>
+        <p style="margin-top:10px;"><strong>AWS Cloud Practitioner</strong> | Issued 05/2021</p>
+      </div>
+      <div>
+        <div class="section-title">Technical Skills</div>
+        <ul>
+          <li>Microsoft 365 Administration, Exchange Online, Entra ID / Azure AD, Intune, Windows Autopilot, Microsoft AD</li>
+          <li>PowerShell scripting, user provisioning, endpoint compliance, IAM, RBAC, backup and recovery</li>
+          <li>Azure, AWS, vSphere, virtualization, cloud security, patching, RMM tools</li>
+          <li>Security awareness training, phishing simulations, compliance support, audit documentation</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
