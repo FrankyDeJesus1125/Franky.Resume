@@ -1,2 +1,2 @@
-# Franky.Resume
-Personal resume and portfolio website for Franky De Jesus
+# .Resume
+Personal resume and portfolio site for IT systems, Microsoft 365, Azure, and security administration.
